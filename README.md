@@ -1,0 +1,1 @@
+# tf_dynamodb_with_permissions
