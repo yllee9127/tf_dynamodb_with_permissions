@@ -24,7 +24,8 @@ resource "aws_instance" "public" {
   vpc_security_group_ids = [aws_security_group.allow_ssh.id]
 
   tags = {
-    Name = "${local.resource_prefix}-ec2-${var.env}"
+    #Name = "${local.resource_prefix}-ec2-${var.env}"
+    Name = "${local.resource_prefix}"
   }
 }
 
