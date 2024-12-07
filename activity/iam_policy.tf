@@ -1,5 +1,5 @@
 resource "aws_iam_policy" "tf-dynamodb-policy" {
-  name        = "tf-yl-dynamodb-read-v2"
+  name        = "tf-yl-dynamodb-read"
   path        = "/"
   description = "YL Dynamodb IAM Policy"
 

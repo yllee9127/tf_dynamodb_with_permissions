@@ -16,8 +16,8 @@ resource "aws_iam_instance_profile" "tf_dynamodb_profile" {
 resource "aws_instance" "public" {
   ami = data.aws_ami.amazon2023.id
   instance_type = "t2.micro"
-  #subnet_id = data.aws_subnets.public.ids[0]
-  subnet_id = "${var.subnet_id}"
+  subnet_id = data.aws_subnets.public.ids[0]
+  #subnet_id = "${var.subnet_id}"
   associate_public_ip_address = true
   #key_name = "yl-key-pair"
   iam_instance_profile = aws_iam_instance_profile.tf_dynamodb_profile.name
@@ -32,8 +32,8 @@ resource "aws_instance" "public" {
 resource "aws_security_group" "allow_ssh" {
   name_prefix = "${local.resource_prefix}-sg-${var.env}"
   description = "Allow SSH inbound and outbound"
-  #vpc_id = data.aws_vpc.selected.id
-  vpc_id = "${var.vpc_id}"
+  vpc_id = data.aws_vpc.selected.id
+  #vpc_id = "${var.vpc_id}"
   lifecycle {
     create_before_destroy = true
   }
