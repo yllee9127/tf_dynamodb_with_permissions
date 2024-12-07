@@ -8,12 +8,6 @@ variable "env" {
   default = "dev"  
 }
 
-#variable "name" {
-#  description = "name of the application"
-#  type = string
-  #default = "somename"
-#}
-
 resource "aws_iam_instance_profile" "tf_dynamodb_profile" {
   name = "tf_yl_dynamodb_profile"
   role = aws_iam_role.tf_dynamodb_role.name
