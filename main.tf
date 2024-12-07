@@ -2,6 +2,12 @@ locals {
   resource_prefix = "yl-tf-dynamodb-reader"
 }
 
+variable "env" {
+  description = "Environment value. Can be used if you want to pass in a different value/variable as per environment. Default value can be set to dev"
+  type = string
+  default = "dev"  
+}
+
 resource "aws_iam_instance_profile" "tf_dynamodb_profile" {
   name = "tf_yl_dynamodb_profile"
   role = aws_iam_role.tf_dynamodb_role.name
